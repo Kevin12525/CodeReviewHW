@@ -65,12 +65,12 @@ public class RandomNumber {
          * @param lo The lower bound.
          * @param hi The upper bound.
          * @return An integer value in {lo,...,hi}
-         * @throws InvalidOperationException if lo > hi     
+         * @throws RuntimeException if lo > hi     
          */
         public int nextIntRand(int lo, int hi) 
-                                throws InvalidOperationException {
+                                throws RuntimeException {
                 if (lo > hi)
-                        throw new InvalidOperationException(
+                        throw new RuntimeException(
                                 "invalid range: " + lo + " > " + hi);
                 return (int) (nextDoubleRand() * (hi - lo + 1)  + lo);
         }
